@@ -22,7 +22,7 @@ import illumakeComposer from '../assets/prototype demos/Illumake/Illu-Composer.m
 
 // RAG Workspace (Internal Tool)
 import ragCover from '../assets/prototype screenshots/RAG Workspace (Internal Tool)/RAG_Workspace_App.png'
-import ragDemo from '../assets/prototype demos/RAG Workspace (Internal Tool)/RAG_Workspace_Proto_Demo.mov'
+import ragDemo from '../assets/prototype demos/RAG Workspace (Internal Tool)/RAG_Workspace_Proto_Demo.m4v'
 
 export { profileImage }
 
