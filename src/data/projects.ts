@@ -105,7 +105,7 @@ export const projects: Project[] = [
     coverAlt: 'Tiger Spice Chai landing page prototype',
     featuredIn: ['web'],
     prototypeUrl:
-      'https://www.figma.com/make/MVvkuQi9DvsZYXTU4BDT49/Create-a-Prototype?fullscreen=1',
+      'https://www.figma.com/proto/brei824ohhVtBdZ13AONuk/DavidRio?node-id=1-3&t=S1GOoHEoP5gXG2kg-1&code-node-id=1-3',
     overview: [
       'Tiger Chai is independent web-design work—not a client project. I made it to show how a product brand can feel on the page: rich atmosphere, a hero product, and a simple next step.',
       'The landing leans on photography, type, and contrast so the can and the jungle mood do the talking, then points people to shop.',
@@ -141,7 +141,7 @@ export const projects: Project[] = [
         title: 'Solution',
         body: [
           'Evolved the first concept into a complete landing: navigation, conservation banner, product story, and a clear path to cart.',
-          'The Figma Make prototype is the final design, open it to click through the live experience.',
+          'The Figma prototype is the final design—open it to click through the live experience.',
         ],
       },
     ],
