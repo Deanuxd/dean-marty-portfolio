@@ -11,7 +11,9 @@ export function Layout() {
 
   useEffect(() => {
     document.title = version.documentTitle
-  }, [version.documentTitle])
+    const meta = document.querySelector('meta[name="description"]')
+    if (meta) meta.setAttribute('content', `${version.role} — ${version.tagline}`)
+  }, [version.documentTitle, version.role, version.tagline])
 
   return (
     <div className="atmosphere grain min-h-svh">

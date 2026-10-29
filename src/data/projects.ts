@@ -38,15 +38,15 @@ export { profileImage }
 export const about = {
   name: 'Dean Marty',
   role: 'Product Designer',
-  tagline: 'Product designer for complex tools that help people work better.',
+  tagline: 'I design tools that feel good to use, and that help the people and the business behind them.',
   email: 'deanuxd@gmail.com',
   linkedin: 'https://www.linkedin.com/in/deanuxd/',
   website: 'https://www.deanuxd.com',
   devto: 'https://dev.to/deanuxd',
   codepen: 'https://codepen.io/Yogu',
   bio: [
-    'At Foxconn iAI, I design AI and industrial software products that reduce friction in high-stakes work—tools people rely on when clarity matters.',
-    'Curious by nature and always learning, I care most about impact: thoughtful research, sharp product decisions, and interfaces that help real people do meaningful work.',
+    'I’m a creative person. I care about how something looks and feels, and I care just as much about the people on the other side of the screen.',
+    'I also care about the business. Design isn’t finished if users are stuck, or if the company can’t see why it matters. At Foxconn iAI I work on AI and industrial tools where both of those things have to be true.',
   ],
   tools: [
     'Figma',

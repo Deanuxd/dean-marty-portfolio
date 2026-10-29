@@ -11,7 +11,7 @@ The site builds as **one** version at a time:
 | Product Designer (default) | `npm run dev` | Optimo, Illumake, RAG Workspace |
 | Web Designer | `npm run dev:web` | Tiger Chai landing (Figma prototype) and iAI website |
 
-Set `VITE_PORTFOLIO_VERSION=web` in Vercel (or copy [`.env.example`](.env.example) to `.env`) to deploy the Web Designer build. Unset or `product` deploys the Product Designer build.
+Local `npm run dev` is still Product Designer. Production builds (`npm run build`, including Vercel) currently ship the **Web Designer** version via [`.env.production`](.env.production). To ship Product Designer instead, set `VITE_PORTFOLIO_VERSION=product` in that file or in the host’s env vars.
 
 ## Develop
 
