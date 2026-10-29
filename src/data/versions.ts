@@ -22,7 +22,8 @@ export const versions: Record<VersionId, VersionConfig> = {
     id: 'product',
     documentTitle: 'Dean Marty — Product Designer',
     role: about.role,
-    tagline: about.tagline,
+    tagline:
+      'I design tools that feel good to use, and that help the people and the business behind them.',
     workHeading: 'Case studies in complex, human-centered tools',
     aboutHeading: 'I care about the people using it, and the business shipping it',
     bio: about.bio,
@@ -37,13 +38,12 @@ export const versions: Record<VersionId, VersionConfig> = {
     id: 'web',
     documentTitle: 'Dean Marty — Web Designer',
     role: 'Web Designer',
-    tagline:
-      'I design websites people enjoy using, and that help a business show up clearly.',
+    tagline: about.tagline,
     workHeading: 'Selected work in sites and landing experiences',
-    aboutHeading: 'Creative work that still has a job to do',
+    aboutHeading: 'Passionate about people, dedicated to results.',
     bio: [
-      'I’m a creative person who cares about both sides of a website: how it feels for the people using it, and whether it actually helps the business.',
-      'At Foxconn iAI I redesigned the company site. On my own I make work like Tiger Chai in Figma—and Wix when that’s the right tool—to keep pushing on brand, atmosphere, and a clear next step.',
+      'I’ve always believed that great web design sits at the intersection of empathy and strategy. My goal isn’t just to build websites that look great—it’s to create meaningful digital experiences that visitors actually enjoy using and that help businesses reach their full potential.',
+      'I bring a positive, collaborative energy to every project, whether I’m sketching initial wireframes, translating complex business goals into clean user flows, or diving into code. I view every design challenge as an opportunity to solve problems creatively and make the web a little more thoughtful, accessible, and engaging.',
     ],
     tools: [
       'Figma',
@@ -53,9 +53,9 @@ export const versions: Record<VersionId, VersionConfig> = {
       'Responsive web',
       'HTML/CSS',
     ],
-    contactHeading: 'Let’s design a site people want to open.',
+    contactHeading: 'Ready to build a web experience that delivers real results?',
     contactBody:
-      'If you’re looking for a web designer who cares about craft and about results, I’d like to talk.',
+      'I’m currently available for new projects and collaborations. Send me a message about your goals, and let’s explore how we can work together.',
     footerLine: 'Web Designer · Sites, landings, and prototypes',
     firstCaseSlug: 'tiger-chai',
   },

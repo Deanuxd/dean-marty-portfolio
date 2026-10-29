@@ -8,10 +8,10 @@ The site builds as **one** version at a time:
 
 | Version | How to run | What it shows |
 | --- | --- | --- |
-| Product Designer (default) | `npm run dev` | Optimo, Illumake, RAG Workspace |
+| Product Designer (default local) | `npm run dev` | Optimo, Illumake, RAG Workspace |
 | Web Designer | `npm run dev:web` | Tiger Chai landing (Figma prototype) and iAI website |
 
-Local `npm run dev` is still Product Designer. Production builds (`npm run build`, including Vercel) currently ship the **Web Designer** version via [`.env.production`](.env.production). To ship Product Designer instead, set `VITE_PORTFOLIO_VERSION=product` in that file or in the host’s env vars.
+Local `npm run dev` is still Product Designer. Production builds (`npm run build`, including Netlify) currently ship the **Web Designer** version via [`.env.production`](.env.production). To ship Product Designer instead, set `VITE_PORTFOLIO_VERSION=product` in that file or in Netlify’s environment variables.
 
 ## Develop
 
@@ -24,7 +24,7 @@ npm run dev:web    # Web Designer
 ## Build
 
 ```bash
-npm run build      # Product Designer
+npm run build      # uses .env.production (Web Designer)
 npm run build:web  # Web Designer
 npm run preview
 ```
@@ -38,14 +38,12 @@ npm run preview
 
 To add a project, drop assets into `src/assets/`, import them in `projects.ts`, and append a new entry with the same section shape (overview, role, process, solution, outcome).
 
-## Deploy (Vercel)
+## Deploy (Netlify)
 
 1. Push this repo to GitHub
-2. Import the project in Vercel (framework preset: Vite)
-3. Build command: `npm run build` (product) or `npm run build:web` (web) · Output: `dist`
-4. Optional: set env var `VITE_PORTFOLIO_VERSION` to `product` or `web`
-
-[`vercel.json`](vercel.json) rewrites SPA routes to `index.html`.
+2. Import the project in Netlify (Vite / `npm run build` / `dist`)
+3. SPA redirects are in [`netlify.toml`](netlify.toml)
+4. Optional: set env var `VITE_PORTFOLIO_VERSION` to `product` or `web` (production currently defaults to `web` via `.env.production`)
 
 ### Media note
 

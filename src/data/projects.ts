@@ -1,5 +1,3 @@
-import profileImage from '../assets/profile picture/profile-1-24.png'
-
 // Optimo
 import optimoDashboard from '../assets/brainstorming/Optimo/Optimo_ProductDashboard.png'
 import optimoWorkflow from '../assets/brainstorming/Optimo/Optimo_WorkflowConcept.png'
@@ -33,12 +31,10 @@ import iaiDemo from '../assets/prototype demos/iAI Website/iAI Landing demo.mp4'
 import tigerChaiCover from '../assets/prototype screenshots/Tiger Chai Landing/tigerChai_prototype.png'
 import tigerChaiConcept from '../assets/full mockups/Tiger Chai Landing/tigerChai_mu.png'
 
-export { profileImage }
-
 export const about = {
   name: 'Dean Marty',
   role: 'Product Designer',
-  tagline: 'I design tools that feel good to use, and that help the people and the business behind them.',
+  tagline: 'Crafting beautiful, goal-oriented websites that users love and businesses thrive on.',
   email: 'deanuxd@gmail.com',
   linkedin: 'https://www.linkedin.com/in/deanuxd/',
   website: 'https://www.deanuxd.com',
@@ -161,7 +157,7 @@ export const projects: Project[] = [
   {
     slug: 'iai-website',
     title: 'iAI Website',
-    tagline: 'A responsive company site that makes complex industrial AI feel clear, credible, and easy to enter.',
+    tagline: 'A responsive company site that makes complex industrial AI feel clear, credible, and easy to discover solutions.',
     outcome: 'Redesigned the Foxconn iAI public website across desktop and mobile, with a landing narrative and supporting content surfaces.',
     role: 'Web Designer',
     year: '2024',

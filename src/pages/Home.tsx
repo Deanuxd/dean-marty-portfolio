@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
-import { about, getFeaturedProjects, profileImage } from '../data/projects'
+import { about, getFeaturedProjects } from '../data/projects'
 import { ProjectRow } from '../components/ProjectRow'
 import { usePortfolioVersion } from '../hooks/usePortfolioVersion'
 import cubesPattern from '../assets/portfolio elements/cubes.png'
@@ -122,28 +122,26 @@ export function Home() {
       </section>
 
       <section id="about" className="scroll-mt-20 border-t border-line px-6 py-24 md:px-8 md:py-32">
-        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:gap-16">
-          <div className="overflow-hidden bg-ink-soft">
-            <img
-              src={profileImage}
-              alt={`${about.name} portrait`}
-              className="aspect-[4/5] w-full object-cover object-top"
-              loading="lazy"
-            />
-          </div>
-          <div className="flex flex-col justify-center">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] md:gap-20">
+          <div>
             <p className="mb-3 text-xs uppercase tracking-[0.18em] text-muted">About</p>
             <h2 className="font-display text-3xl text-paper md:text-4xl">
               {version.aboutHeading}
             </h2>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-fog/90 md:text-lg">
+            <div className="mt-6 max-w-xl space-y-4 text-base leading-relaxed text-fog/90 md:text-lg">
               {version.bio.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-            <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
+          </div>
+          <div>
+            <p className="mb-6 text-xs uppercase tracking-[0.18em] text-accent">Skills</p>
+            <ul className="grid grid-cols-1 gap-px sm:grid-cols-2">
               {version.tools.map((tool) => (
-                <li key={tool} className="after:ml-5 after:text-line after:content-['·'] last:after:content-none">
+                <li
+                  key={tool}
+                  className="border-t border-line py-4 font-display text-2xl tracking-tight text-paper md:text-[1.65rem]"
+                >
                   {tool}
                 </li>
               ))}
