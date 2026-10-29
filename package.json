@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:web": "VITE_PORTFOLIO_VERSION=web vite",
     "build": "tsc -b && vite build",
+    "build:web": "VITE_PORTFOLIO_VERSION=web tsc -b && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
   },

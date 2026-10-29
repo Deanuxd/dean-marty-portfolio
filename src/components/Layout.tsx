@@ -1,10 +1,17 @@
+import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Nav } from './Nav'
 import { Footer } from './Footer'
+import { usePortfolioVersion } from '../hooks/usePortfolioVersion'
 
 export function Layout() {
   const location = useLocation()
+  const version = usePortfolioVersion()
+
+  useEffect(() => {
+    document.title = version.documentTitle
+  }, [version.documentTitle])
 
   return (
     <div className="atmosphere grain min-h-svh">

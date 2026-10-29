@@ -2,10 +2,12 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { about, getFeaturedProjects, profileImage } from '../data/projects'
 import { ProjectRow } from '../components/ProjectRow'
+import { usePortfolioVersion } from '../hooks/usePortfolioVersion'
 import cubesPattern from '../assets/portfolio elements/cubes.png'
 
 export function Home() {
-  const featured = getFeaturedProjects()
+  const version = usePortfolioVersion()
+  const featured = getFeaturedProjects(version.id)
 
   return (
     <>
@@ -50,7 +52,7 @@ export function Home() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="mb-4 text-sm uppercase tracking-[0.2em] text-accent"
             >
-              {about.role}
+              {version.role}
             </motion.p>
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
@@ -66,7 +68,7 @@ export function Home() {
               transition={{ duration: 0.55, delay: 0.14, ease: [0.22, 1, 0.36, 1] }}
               className="mt-6 text-lg leading-relaxed text-fog md:text-xl"
             >
-              {about.tagline}
+              {version.tagline}
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 16 }}
@@ -104,12 +106,16 @@ export function Home() {
           <div className="mb-16 max-w-2xl md:mb-20">
             <p className="mb-3 text-xs uppercase tracking-[0.18em] text-muted">Selected work</p>
             <h2 className="font-display text-3xl text-paper md:text-5xl">
-              Case studies in complex, human-centered tools
+              {version.workHeading}
             </h2>
           </div>
           <div className="flex flex-col gap-24 md:gap-32">
             {featured.map((project, index) => (
-              <ProjectRow key={project.slug} project={project} index={index} />
+              <ProjectRow
+                key={project.slug}
+                project={project}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -128,15 +134,15 @@ export function Home() {
           <div className="flex flex-col justify-center">
             <p className="mb-3 text-xs uppercase tracking-[0.18em] text-muted">About</p>
             <h2 className="font-display text-3xl text-paper md:text-4xl">
-              Designing for impact where clarity matters
+              {version.aboutHeading}
             </h2>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-fog/90 md:text-lg">
-              {about.bio.map((paragraph) => (
+              {version.bio.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
             <ul className="mt-8 flex flex-wrap gap-x-5 gap-y-2 text-sm text-muted">
-              {about.tools.map((tool) => (
+              {version.tools.map((tool) => (
                 <li key={tool} className="after:ml-5 after:text-line after:content-['·'] last:after:content-none">
                   {tool}
                 </li>
@@ -150,11 +156,9 @@ export function Home() {
         <div className="mx-auto max-w-6xl">
           <p className="mb-3 text-xs uppercase tracking-[0.18em] text-muted">Contact</p>
           <h2 className="font-display text-3xl text-paper md:text-5xl">
-            Let’s build something that helps people.
+            {version.contactHeading}
           </h2>
-          <p className="mt-5 max-w-xl text-lg text-fog/90">
-            Open to Product Designer roles—especially teams shipping tools with real human impact.
-          </p>
+          <p className="mt-5 max-w-xl text-lg text-fog/90">{version.contactBody}</p>
           <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
             <a
               href={`mailto:${about.email}`}
@@ -170,7 +174,10 @@ export function Home() {
             >
               LinkedIn
             </a>
-            <Link to="/work/optimo" className="text-sm text-muted transition hover:text-accent">
+            <Link
+              to={`/work/${version.firstCaseSlug}`}
+              className="text-sm text-muted transition hover:text-accent"
+            >
               Start with a case study →
             </Link>
           </div>

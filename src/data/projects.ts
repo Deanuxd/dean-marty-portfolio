@@ -24,6 +24,15 @@ import illumakeComposer from '../assets/prototype demos/Illumake/Illu-Composer.m
 import ragCover from '../assets/prototype screenshots/RAG Workspace (Internal Tool)/RAG_Workspace_App.png'
 import ragDemo from '../assets/prototype demos/RAG Workspace (Internal Tool)/RAG_Workspace_Proto_Demo.m4v'
 
+// iAI Website
+import iaiCover from '../assets/live website capture/iAI Website/iAI_Landing_Website.png'
+import iaiMobile from '../assets/live website capture/iAI Website/iAI_Landing_Mobile.png'
+import iaiDemo from '../assets/prototype demos/iAI Website/iAI Landing demo.mp4'
+
+// Tiger Chai
+import tigerChaiCover from '../assets/prototype screenshots/Tiger Chai Landing/tigerChai_prototype.png'
+import tigerChaiConcept from '../assets/full mockups/Tiger Chai Landing/tigerChai_mu.png'
+
 export { profileImage }
 
 export const about = {
@@ -63,6 +72,8 @@ export type CaseSection = {
   media?: MediaItem[]
 }
 
+export type PortfolioVersionId = 'product' | 'web'
+
 export type Project = {
   slug: string
   title: string
@@ -74,7 +85,8 @@ export type Project = {
   tags: string[]
   cover: string
   coverAlt: string
-  featured: boolean
+  featuredIn: PortfolioVersionId[]
+  prototypeUrl?: string
   overview: string[]
   roleDetail: string[]
   constraints: string[]
@@ -84,6 +96,142 @@ export type Project = {
 }
 
 export const projects: Project[] = [
+  {
+    slug: 'tiger-chai',
+    title: 'Tiger Chai',
+    tagline: 'A cinematic landing page for David Rio’s Tiger Spice Chai—atmosphere, product, and a clear path to shop.',
+    outcome: 'Designed a self-initiated landing experience to show web-design craft: mood, hierarchy, and a clickable Figma prototype.',
+    role: 'Web Designer',
+    year: '2026',
+    context: 'Independent · Landing page',
+    tags: ['Landing page', 'Visual design', 'Prototyping'],
+    cover: tigerChaiCover,
+    coverAlt: 'Tiger Spice Chai landing page prototype',
+    featuredIn: ['web'],
+    prototypeUrl:
+      'https://www.figma.com/make/MVvkuQi9DvsZYXTU4BDT49/Create-a-Prototype?fullscreen=1',
+    overview: [
+      'Tiger Chai is independent web-design work—not a client project. I made it to show how a product brand can feel on the page: rich atmosphere, a hero product, and a simple next step.',
+      'The landing leans on photography, type, and contrast so the can and the jungle mood do the talking, then points people to shop.',
+    ],
+    roleDetail: [
+      'Owned art direction, layout, and interaction for a marketing landing page, from an early concept still to the final Figma Make prototype.',
+      'Designed the first viewport around brand atmosphere and a single product story rather than a crowded feature grid.',
+    ],
+    constraints: [
+      'Had to feel premium and energetic without hiding the product.',
+      'Needed a prototype people could click through, not only a static mockup.',
+      'Independent work, so the piece had to stand on craft alone.',
+    ],
+    sections: [
+      {
+        id: 'process',
+        title: 'Process',
+        body: [
+          'David Rio makes Tiger Spice Chai—a personal favorite of mine. I wanted to use the brand\'s existing packaging to inspire the design.',
+          'The pouncing tiger on the cover, the color palette, and the typeface all helped to create a sense of energy and excitement. The final design can be viewed in the Figma prototype, but below you can view an earlier version of the mockup.',
+        ],
+        media: [
+          {
+            type: 'image',
+            src: tigerChaiConcept,
+            alt: 'Tiger Spice Chai early landing concept',
+            caption: 'First concept — atmosphere study before the final prototype',
+          },
+        ],
+      },
+      {
+        id: 'solution',
+        title: 'Solution',
+        body: [
+          'Evolved the first concept into a complete landing: navigation, conservation banner, product story, and a clear path to cart.',
+          'The Figma Make prototype is the final design, open it to click through the live experience.',
+        ],
+      },
+    ],
+    outcomeDetail: [
+      'A self-initiated landing that demonstrates web-design range beyond industrial product work.',
+      'A clickable prototype that stands as the finished landing, with the early concept kept as process.',
+    ],
+    learnings: [
+      'Brand landings live or die on the first viewport: mood, product, and one next step.',
+      'A prototype makes speculative work feel real in a way a mockup alone cannot.',
+    ],
+  },
+  {
+    slug: 'iai-website',
+    title: 'iAI Website',
+    tagline: 'A responsive company site that makes complex industrial AI feel clear, credible, and easy to enter.',
+    outcome: 'Redesigned the Foxconn iAI public website across desktop and mobile, with a landing narrative and supporting content surfaces.',
+    role: 'Web Designer',
+    year: '2024',
+    context: 'Foxconn iAI · Marketing site',
+    tags: ['Responsive web', 'Landing page', 'Visual design'],
+    cover: iaiCover,
+    coverAlt: 'iAI website desktop landing page',
+    featuredIn: ['web'],
+    overview: [
+      'Foxconn iAI needed a public website that could explain a technical company without burying visitors in jargon—or looking like a generic corporate template.',
+      'The work was a full visual and structural pass: hierarchy, responsive layout, and a product-led landing that uses the interface itself as proof.',
+    ],
+    roleDetail: [
+      'Designed the landing experience end to end: information architecture, visual system, desktop and mobile layouts, and motion for the live site.',
+      'Shaped content hierarchy so technical claims stayed scannable for mixed audiences—operators, engineers, and decision-makers.',
+    ],
+    constraints: [
+      'Had to speak to mixed audiences without diluting technical credibility.',
+      'Needed a system that worked across desktop and mobile from the first viewport.',
+      'The site had to feel like the company: calm, precise, and product-led—not decorative.',
+    ],
+    sections: [
+      {
+        id: 'process',
+        title: 'Process',
+        body: [
+          'Started from jobs on the page: understand the company, trust the work, and find a clear next step.',
+          'Explored layout that puts capability first, then proof, then action—keeping the first viewport focused instead of crowded with feature lists.',
+        ],
+        media: [
+          {
+            type: 'image',
+            src: iaiCover,
+            alt: 'iAI desktop landing page',
+            caption: 'Desktop landing — value proposition and product presence',
+          },
+          {
+            type: 'image',
+            src: iaiMobile,
+            alt: 'iAI mobile landing page',
+            caption: 'Mobile layout with the same narrative priority',
+          },
+        ],
+      },
+      {
+        id: 'solution',
+        title: 'Solution',
+        body: [
+          'Designed a product-led landing that uses real interface presence as the hero, then adapted the system for mobile without losing hierarchy.',
+          'Prototyped the live experience so stakeholders could feel pacing, scroll, and entry points before launch.',
+        ],
+        media: [
+          {
+            type: 'video',
+            src: iaiDemo,
+            alt: 'iAI website prototype demo',
+            caption: 'Landing walkthrough',
+          },
+        ],
+      },
+    ],
+    outcomeDetail: [
+      'Shipped a cohesive responsive website that clarified how Foxconn iAI presents itself on the public web.',
+      'Established a visual and narrative baseline that can extend into deeper content pages.',
+    ],
+    learnings: [
+      'On a company site, showing the work early builds more trust than stacking claims.',
+      'Responsive design is part of the story—mobile isn’t a secondary polish pass.',
+    ],
+  },
   {
     slug: 'optimo',
     title: 'Optimo',
@@ -95,7 +243,7 @@ export const projects: Project[] = [
     tags: ['Manual annotation', 'Model training', 'Live inference'],
     cover: optimoLiveDashboard,
     coverAlt: 'Optimo live inference dashboard',
-    featured: true,
+    featuredIn: ['product'],
     overview: [
       'Optimo supports the full loop of industrial AI: people manually annotate data to train models, then monitor those models as they run live inference on the floor.',
       'The product had to make the training side precise and trustworthy, and the live side scannable under pressure—without treating them as unrelated tools.',
@@ -211,7 +359,7 @@ export const projects: Project[] = [
     tags: ['User flows', 'Operator training', 'Prototyping'],
     cover: illumakeComposerCover,
     coverAlt: 'Illumake Composer interface screenshot',
-    featured: true,
+    featuredIn: ['product'],
     overview: [
       'Illumake needed clarity around who the operator is, how they learn the system, and how creation tools fit into real work—not just feature lists.',
       'The work connected early flow mapping and training journeys to a tangible composer prototype people could react to.',
@@ -303,7 +451,7 @@ export const projects: Project[] = [
     tags: ['Internal tools', 'RAG', 'AI UX'],
     cover: ragCover,
     coverAlt: 'RAG workspace application screenshot',
-    featured: true,
+    featuredIn: ['product'],
     overview: [
       'Internal RAG tools fail when people can’t see what the system retrieved or what to do next.',
       'This workspace focused on making retrieval context inspectable and the working loop scannable for people shipping and evaluating AI features.',
@@ -366,18 +514,22 @@ export function getProject(slug: string): Project | undefined {
   return projects.find((p) => p.slug === slug)
 }
 
-export function getFeaturedProjects(): Project[] {
-  return projects.filter((p) => p.featured)
+export function getFeaturedProjects(versionId: PortfolioVersionId): Project[] {
+  return projects.filter((p) => p.featuredIn.includes(versionId))
 }
 
-export function getAdjacentProjects(slug: string): {
+export function getAdjacentProjects(
+  slug: string,
+  versionId: PortfolioVersionId,
+): {
   prev: Project | null
   next: Project | null
 } {
-  const index = projects.findIndex((p) => p.slug === slug)
+  const list = getFeaturedProjects(versionId)
+  const index = list.findIndex((p) => p.slug === slug)
   if (index === -1) return { prev: null, next: null }
   return {
-    prev: projects[index - 1] ?? null,
-    next: projects[index + 1] ?? null,
+    prev: list[index - 1] ?? null,
+    next: list[index + 1] ?? null,
   }
 }

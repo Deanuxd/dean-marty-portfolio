@@ -1,11 +1,13 @@
 import { Link, useParams } from 'react-router-dom'
 import { about, getAdjacentProjects, getProject } from '../data/projects'
 import { MediaBlock } from '../components/MediaBlock'
+import { usePortfolioVersion } from '../hooks/usePortfolioVersion'
 
 export function CaseStudy() {
+  const version = usePortfolioVersion()
   const { slug = '' } = useParams()
   const project = getProject(slug)
-  const { prev, next } = getAdjacentProjects(slug)
+  const { prev, next } = getAdjacentProjects(slug, version.id)
 
   if (!project) {
     return (
@@ -62,6 +64,17 @@ export function CaseStudy() {
             className="aspect-[16/9] w-full object-cover object-top"
           />
         </div>
+        {project.prototypeUrl ? (
+          <a
+            href={project.prototypeUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="mt-6 inline-flex items-center gap-2 bg-accent px-6 py-3 text-sm font-medium text-ink transition hover:bg-paper"
+          >
+            Open interactive prototype
+            <span aria-hidden="true">↗</span>
+          </a>
+        ) : null}
 
         <section className="mt-20 grid gap-10 md:mt-28 md:grid-cols-[minmax(0,0.35fr)_minmax(0,0.65fr)] md:gap-16">
           <h2 className="font-display text-2xl text-paper md:text-3xl">Overview</h2>
