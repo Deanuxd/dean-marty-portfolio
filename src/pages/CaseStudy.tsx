@@ -1,6 +1,9 @@
 import { Link, useParams } from 'react-router-dom'
 import { about, getAdjacentProjects, getProject } from '../data/projects'
 import { MediaBlock } from '../components/MediaBlock'
+import { Motif } from '../components/Motif'
+import { SectionTitle } from '../components/SectionTitle'
+import { HighlightCallout } from '../components/HighlightCallout'
 import { usePortfolioVersion } from '../hooks/usePortfolioVersion'
 
 export function CaseStudy() {
@@ -24,20 +27,23 @@ export function CaseStudy() {
     <article className="pb-24 pt-24 md:pb-32 md:pt-28">
       <header className="border-b border-line px-6 pb-16 md:px-8 md:pb-20">
         <div className="mx-auto max-w-6xl">
-          <Link
-            to="/#work"
-            className="mb-8 inline-flex text-sm text-muted transition hover:text-accent"
-          >
-            ← Selected work
-          </Link>
-          <p className="mb-4 text-xs uppercase tracking-[0.18em] text-accent">
-            {project.context} · {project.year}
-          </p>
-          <h1 className="font-display text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.05] tracking-tight text-paper">
+          <div className="flex flex-col gap-10">
+            <Link
+              to="/#work"
+              className="w-fit text-sm text-muted transition hover:text-accent"
+            >
+              ← Selected work
+            </Link>
+            <p className="inline-flex items-center gap-2.5 text-xs uppercase tracking-[0.18em] text-accent">
+              <Motif size="sm" />
+              {project.context} · {project.year}
+            </p>
+          </div>
+          <h1 className="mt-4 font-display text-[clamp(2.5rem,7vw,4.75rem)] leading-[1.05] tracking-tight text-paper italic">
             {project.title}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-fog md:text-xl">
-            {project.outcome}
+            {project.tagline}
           </p>
           <dl className="mt-10 grid gap-6 sm:grid-cols-3">
             <div>
@@ -49,8 +55,8 @@ export function CaseStudy() {
               <dd className="mt-2 text-paper">{project.tags.join(' · ')}</dd>
             </div>
             <div>
-              <dt className="text-xs uppercase tracking-[0.16em] text-muted">Tagline</dt>
-              <dd className="mt-2 text-paper">{project.tagline}</dd>
+              <dt className="text-xs uppercase tracking-[0.16em] text-muted">Year</dt>
+              <dd className="mt-2 text-paper">{project.year}</dd>
             </div>
           </dl>
         </div>
@@ -75,9 +81,17 @@ export function CaseStudy() {
             <span aria-hidden="true">↗</span>
           </a>
         ) : null}
+      </div>
 
+      <HighlightCallout label="Outcome" className="mt-16 md:mt-20">
+        <p>{project.outcome}</p>
+      </HighlightCallout>
+
+      <div className="mx-auto max-w-6xl px-6 md:px-8">
         <section className="mt-20 grid gap-10 md:mt-28 md:grid-cols-[minmax(0,0.35fr)_minmax(0,0.65fr)] md:gap-16">
-          <h2 className="font-display text-2xl text-paper md:text-3xl">Overview</h2>
+          <SectionTitle className="text-2xl md:text-3xl" motifSize="lg">
+            Overview
+          </SectionTitle>
           <div className="space-y-4 text-base leading-relaxed text-fog/90 md:text-lg">
             {project.overview.map((p) => (
               <p key={p}>{p}</p>
@@ -113,7 +127,9 @@ export function CaseStudy() {
             className="mt-20 border-t border-line pt-20 md:mt-28 md:pt-28"
           >
             <div className="grid gap-10 md:grid-cols-[minmax(0,0.35fr)_minmax(0,0.65fr)] md:gap-16">
-              <h2 className="font-display text-2xl text-paper md:text-3xl">{section.title}</h2>
+              <SectionTitle className="text-2xl md:text-3xl" motifSize="lg">
+                {section.title}
+              </SectionTitle>
               <div className="space-y-4 text-base leading-relaxed text-fog/90 md:text-lg">
                 {section.body.map((p) => (
                   <p key={p}>{p}</p>
@@ -132,7 +148,9 @@ export function CaseStudy() {
 
         <section className="mt-20 grid gap-10 border-t border-line pt-20 md:mt-28 md:grid-cols-2 md:gap-16 md:pt-28">
           <div>
-            <h2 className="font-display text-2xl text-paper md:text-3xl">Outcome</h2>
+            <SectionTitle className="text-2xl md:text-3xl" motifSize="lg">
+              Outcome
+            </SectionTitle>
             <div className="mt-6 space-y-4 text-base leading-relaxed text-fog/90">
               {project.outcomeDetail.map((p) => (
                 <p key={p}>{p}</p>

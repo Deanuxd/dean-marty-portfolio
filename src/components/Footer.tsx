@@ -1,5 +1,6 @@
 import { about } from '../data/projects'
 import { usePortfolioVersion } from '../hooks/usePortfolioVersion'
+import { Motif } from './Motif'
 
 export function Footer() {
   const version = usePortfolioVersion()
@@ -7,7 +8,10 @@ export function Footer() {
   return (
     <footer className="border-t border-line">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-8">
-        <p className="font-display text-paper">{about.name}</p>
+        <p className="inline-flex items-center gap-2.5 font-display italic text-paper">
+          <Motif size="sm" />
+          {about.name}
+        </p>
         <p className="text-sm text-muted">{version.footerLine}</p>
         <div className="flex gap-5 text-sm text-muted">
           <a className="hover:text-accent" href={`mailto:${about.email}`}>

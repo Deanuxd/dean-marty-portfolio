@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { about } from '../data/projects'
+import { Motif } from './Motif'
 
 export function Nav() {
   return (
@@ -7,8 +8,9 @@ export function Nav() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6 md:px-8">
         <Link
           to="/"
-          className="font-display text-lg tracking-tight text-paper transition-colors hover:text-accent"
+          className="group inline-flex items-center gap-2.5 font-display text-lg italic tracking-tight text-paper transition-colors hover:text-accent"
         >
+          <Motif size="md" className="transition-transform duration-500 group-hover:rotate-[30deg]" />
           {about.name}
         </Link>
         <nav className="flex items-center gap-6 md:gap-8">
