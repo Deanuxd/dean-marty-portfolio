@@ -59,6 +59,8 @@ export type MediaItem = {
   src: string
   alt: string
   caption?: string
+  /** Constrain display width — use for phone captures so they don’t stretch full-bleed */
+  frame?: 'phone'
 }
 
 export type CaseSection = {
@@ -83,6 +85,7 @@ export type Project = {
   coverAlt: string
   featuredIn: PortfolioVersionId[]
   prototypeUrl?: string
+  liveUrl?: string
   overview: string[]
   roleDetail: string[]
   constraints: string[]
@@ -166,6 +169,7 @@ export const projects: Project[] = [
     cover: iaiCover,
     coverAlt: 'iAI website desktop landing page',
     featuredIn: ['web'],
+    liveUrl: 'https://www.foxconn-iai.com/',
     overview: [
       'Foxconn iAI needed a public website that could explain a technical company without burying visitors in jargon—or looking like a generic corporate template.',
       'The work was a full visual and structural pass: hierarchy, responsive layout, and a product-led landing that uses the interface itself as proof.',
@@ -186,19 +190,28 @@ export const projects: Project[] = [
         body: [
           'Started from jobs on the page: understand the company, trust the work, and find a clear next step.',
           'Explored layout that puts capability first, then proof, then action—keeping the first viewport focused instead of crowded with feature lists.',
+          'Along the way I also prototyped an unused landing concept built around our two main products at the time—meant to make their purpose and capabilities easy to grasp.',
         ],
         media: [
+          {
+            type: 'video',
+            src: iaiDemo,
+            alt: 'Unused iAI landing concept emphasizing two core products',
+            caption:
+              'Unused landing concept — framed around two core products and what each could do',
+          },
           {
             type: 'image',
             src: iaiCover,
             alt: 'iAI desktop landing page',
-            caption: 'Desktop landing — value proposition and product presence',
+            caption: 'Shipped desktop landing — value proposition and product presence',
           },
           {
             type: 'image',
             src: iaiMobile,
             alt: 'iAI mobile landing page',
-            caption: 'Mobile layout with the same narrative priority',
+            caption: 'Shipped mobile layout with the same narrative priority',
+            frame: 'phone',
           },
         ],
       },
@@ -207,15 +220,7 @@ export const projects: Project[] = [
         title: 'Solution',
         body: [
           'Designed a product-led landing that uses real interface presence as the hero, then adapted the system for mobile without losing hierarchy.',
-          'Prototyped the live experience so stakeholders could feel pacing, scroll, and entry points before launch.',
-        ],
-        media: [
-          {
-            type: 'video',
-            src: iaiDemo,
-            alt: 'iAI website prototype demo',
-            caption: 'Landing walkthrough',
-          },
+          'The product-focused concept stayed exploratory; the shipped site kept a clearer company narrative with responsive layouts that hold up from the first viewport.',
         ],
       },
     ],

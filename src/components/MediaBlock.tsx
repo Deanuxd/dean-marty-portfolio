@@ -11,13 +11,15 @@ export function MediaBlock({ item, priority = false }: Props) {
     return <LazyVideo item={item} />
   }
 
+  const isPhone = item.frame === 'phone'
+
   return (
-    <figure className="space-y-3">
+    <figure className={`space-y-3 ${isPhone ? 'mx-auto w-full max-w-[280px] md:max-w-[320px]' : ''}`}>
       <div className="overflow-hidden bg-ink-soft">
         <img
           src={item.src}
           alt={item.alt}
-          className="w-full object-cover"
+          className={`w-full ${isPhone ? 'object-contain' : 'object-cover'}`}
           loading={priority ? 'eager' : 'lazy'}
         />
       </div>

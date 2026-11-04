@@ -45,6 +45,17 @@ export function ProjectRow({ project, index }: Props) {
             View case study
             <span aria-hidden="true">→</span>
           </Link>
+          {project.liveUrl ? (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex w-fit items-center gap-2 text-sm font-medium text-muted transition-colors hover:text-accent"
+            >
+              Visit live site
+              <span aria-hidden="true">↗</span>
+            </a>
+          ) : null}
           {project.prototypeUrl ? (
             <a
               href={project.prototypeUrl}

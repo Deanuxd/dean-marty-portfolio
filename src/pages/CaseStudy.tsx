@@ -70,17 +70,36 @@ export function CaseStudy() {
             className="aspect-[16/9] w-full object-cover object-top"
           />
         </div>
-        {project.prototypeUrl ? (
-          <a
-            href={project.prototypeUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="mt-6 inline-flex items-center gap-2 bg-accent px-6 py-3 text-sm font-medium text-ink transition hover:bg-paper"
-          >
-            Open interactive prototype
-            <span aria-hidden="true">↗</span>
-          </a>
-        ) : null}
+        {(project.liveUrl || project.prototypeUrl) && (
+          <div className="mt-6 flex flex-wrap items-center gap-4">
+            {project.liveUrl ? (
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 bg-accent px-6 py-3 text-sm font-semibold text-ink shadow-[0_0_36px_-8px_rgba(255,107,69,0.65)] transition hover:bg-paper"
+              >
+                Visit live site
+                <span aria-hidden="true">↗</span>
+              </a>
+            ) : null}
+            {project.prototypeUrl ? (
+              <a
+                href={project.prototypeUrl}
+                target="_blank"
+                rel="noreferrer"
+                className={`inline-flex items-center gap-2 px-6 py-3 text-sm font-medium transition ${
+                  project.liveUrl
+                    ? 'border border-line text-paper hover:border-accent hover:text-accent'
+                    : 'bg-accent text-ink hover:bg-paper'
+                }`}
+              >
+                Open interactive prototype
+                <span aria-hidden="true">↗</span>
+              </a>
+            ) : null}
+          </div>
+        )}
       </div>
 
       <HighlightCallout label="Outcome" className="mt-16 md:mt-20">
