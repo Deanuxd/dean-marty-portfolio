@@ -171,17 +171,17 @@ export const projects: Project[] = [
     featuredIn: ['web'],
     liveUrl: 'https://www.foxconn-iai.com/',
     overview: [
-      'Foxconn iAI needed a public website that could explain a technical company without burying visitors in jargon—or looking like a generic corporate template.',
+      'Foxconn iAI needed a public website that could explain a technical company without burying visitors in jargon, or looking like a generic corporate template.',
       'The work was a full visual and structural pass: hierarchy, responsive layout, and a product-led landing that uses the interface itself as proof.',
     ],
     roleDetail: [
       'Designed the landing experience end to end: information architecture, visual system, desktop and mobile layouts, and motion for the live site.',
-      'Shaped content hierarchy so technical claims stayed scannable for mixed audiences—operators, engineers, and decision-makers.',
+      'Shaped content hierarchy so technical claims stayed scannable for mixed audiences like operators, engineers, and decision-makers.',
     ],
     constraints: [
       'Had to speak to mixed audiences without diluting technical credibility.',
       'Needed a system that worked across desktop and mobile from the first viewport.',
-      'The site had to feel like the company: calm, precise, and product-led—not decorative.',
+      'The site had to feel like the company: calm, precise, and product-led, not decorative.',
     ],
     sections: [
       {
@@ -189,8 +189,8 @@ export const projects: Project[] = [
         title: 'Process',
         body: [
           'Started from jobs on the page: understand the company, trust the work, and find a clear next step.',
-          'Explored layout that puts capability first, then proof, then action—keeping the first viewport focused instead of crowded with feature lists.',
-          'Along the way I also prototyped an unused landing concept built around our two main products at the time—meant to make their purpose and capabilities easy to grasp.',
+          'Explored layout that puts capability first, then proof, then action, keeping the first viewport focused instead of crowded with feature lists.',
+          'Along the way I also prototyped an unused landing concept built around our two main products at the time, meant to make their purpose and capabilities easy to grasp.',
         ],
         media: [
           {
@@ -198,13 +198,13 @@ export const projects: Project[] = [
             src: iaiDemo,
             alt: 'Unused iAI landing concept emphasizing two core products',
             caption:
-              'Unused landing concept — framed around two core products and what each could do',
+              'Unused landing concept framed around two core products and what each could do',
           },
           {
             type: 'image',
             src: iaiCover,
             alt: 'iAI desktop landing page',
-            caption: 'Shipped desktop landing — value proposition and product presence',
+            caption: 'Shipped desktop landing: value proposition and product presence',
           },
           {
             type: 'image',
@@ -230,7 +230,7 @@ export const projects: Project[] = [
     ],
     learnings: [
       'On a company site, showing the work early builds more trust than stacking claims.',
-      'Responsive design is part of the story—mobile isn’t a secondary polish pass.',
+      'Responsive design is part of the story. Mobile isn’t a secondary polish pass.',
     ],
   },
   {
